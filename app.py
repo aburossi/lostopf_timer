@@ -30,17 +30,17 @@ col1, col2 = st.columns([3, 2])
 with col1:
     st.write("<h2>Teilnehmer:</h2>", unsafe_allow_html=True)
     if 'names_list' in st.session_state:
-        st.dataframe(pd.DataFrame(st.session_state.names_list, columns=["Namen"]))
+        st.table(pd.DataFrame(st.session_state.names_list, columns=["Namen"]))
 
         if st.button('Zufallsname auswählen') and st.session_state.names_list:
             random_name = random.choice(st.session_state.names_list)
             st.session_state.names_list.remove(random_name)
             st.success(f"Auswahl: {random_name}")
-            st.dataframe(pd.DataFrame(st.session_state.names_list, columns=["Namen"]))
+            st.table(pd.DataFrame(st.session_state.names_list, columns=["Namen"]))
 
         if st.button('Liste zurücksetzen'):
             st.session_state.names_list = st.session_state.original_names_list.copy()
-            st.dataframe(pd.DataFrame(st.session_state.names_list, columns=["Namen"]))
+            st.table(pd.DataFrame(st.session_state.names_list, columns=["Namen"]))
 
         num_groups = st.number_input('Anzahl der Gruppen', min_value=1, value=2, step=1)
         if st.button('Gruppen erstellen'):
