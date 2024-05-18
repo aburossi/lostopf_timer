@@ -36,7 +36,6 @@ with col1:
             random_name = random.choice(st.session_state.names_list)
             st.session_state.names_list.remove(random_name)
             st.success(f"Auswahl: {random_name}")
-            # Update the displayed dataframe
             st.dataframe(pd.DataFrame(st.session_state.names_list, columns=["Namen"]))
 
         if st.button('Liste zurücksetzen'):
