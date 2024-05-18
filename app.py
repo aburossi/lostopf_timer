@@ -5,7 +5,7 @@ import time
 import matplotlib.pyplot as plt
 from io import BytesIO
 
-st.title('Lostopf & Timer')
+st.title('Los-Topf & Timer')
 
 def create_group_image(groups):
     fig, ax = plt.subplots()
